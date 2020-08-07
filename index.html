@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="babel.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>List Assignment React</title>
+</head>
+<body>
+    <div class="total">
+    <div id="entry" class="entry">
+        <input type="text" id="type" placeholder="Type Here">
+         <button id="submit">SUBMIT</button>
+         </div>
+         <div id="root"></div>
+
+    <script type="text/jsx">
+             const data=[
+             {id:1, text:"Bread", button: {innerText:"Delete"}},
+             {id:2, text:"Nike Ball Boots"},
+             {id:3, text:"Cake"},
+
+             ];
+    
+          function Apps (props){
+              console.log(props)
+              return(
+                  <div className="repeat">
+                      <ul>
+                          <li>
+                             {props.text}
+                             <button>Delete</button>
+                          </li>
+                      </ul>
+                  </div>
+
+              );
+          }
+    
+          let appList=data.map(i => <Apps key={i.id} text={i.text} />);
+
+          ReactDOM.render(
+            <React.StrictMode>
+            {appList}
+            </React.StrictMode> , document.getElementById('root'));
+
+
+
+    </script>
+
+</div>
+</body>
+</html>
